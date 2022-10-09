@@ -1,18 +1,13 @@
 package com.example.goldenmovieticketnew.services.User;
 
-import com.example.goldenmovieticketnew.models.Role;
-import com.example.goldenmovieticketnew.models.RoleName;
 import com.example.goldenmovieticketnew.models.User;
 import com.example.goldenmovieticketnew.payload.SignUpRequest;
 import com.example.goldenmovieticketnew.payload.UserProfile;
 import com.example.goldenmovieticketnew.repositories.RoleRepository;
 import com.example.goldenmovieticketnew.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,9 +19,6 @@ public class UserService implements IUserService {
     @Autowired
     private RoleRepository roleRepository;
 
-//    public PasswordEncoder passwordEncoder() {
-//        return new BCryptPasswordEncoder();
-//    }
     @Override
     public List<User> getAllUser() {
 
