@@ -85,12 +85,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         .permitAll()
                     .antMatchers("/api/auth/**")
                         .permitAll()
-                    .antMatchers("/api/user/checkUsernameAvailability", "/api/user/checkEmailAvailability")
+                    .antMatchers("/api/user/checkUsernameAvailability","/swagger-ui.html", "/swagger-ui/**", "/api/user/checkEmailAvailability")
                         .permitAll()
-                    .antMatchers(HttpMethod.GET, "/api/polls/**", "/api/users/**")
+                    .antMatchers(HttpMethod.GET, "/api/polls/**","/api/users/**")
                         .hasRole("ADMIN")
                     .anyRequest()
-                        .authenticated();
+                        .permitAll();
 
         // Add our custom JWT security filter
         http.addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class);
