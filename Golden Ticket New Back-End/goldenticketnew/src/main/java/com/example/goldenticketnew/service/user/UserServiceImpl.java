@@ -1,6 +1,7 @@
 package com.example.goldenticketnew.service.user;
 
 
+import com.example.goldenticketnew.exception.ResourceNotFoundException;
 import com.example.goldenticketnew.model.Role;
 import com.example.goldenticketnew.model.User;
 import com.example.goldenticketnew.payload.UserProfile;
@@ -50,13 +51,13 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public UserProfile getUserProfile(String username) {
-//        User user = userRepository.findByUsername(username)
-//                .orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
-//
-//        UserProfile userProfile = new UserProfile(user.getId(), user.getUsername(), user.getName(), user.getCreatedAt(),3,3);
+        User user = userRepository.findByUsername(username)
+                .orElseThrow(() -> new ResourceNotFoundException("User", "username", username));
 
-//        return userProfile;
-        return null;
+        UserProfile userProfile = new UserProfile(user.getId(), user.getUsername(), user.getName(), user.getEmail(),user.getImage());
+
+        return userProfile;
+
     }
 
     @Override

@@ -1,8 +1,10 @@
 package com.example.goldenticketnew.payload;
 
+import com.example.goldenticketnew.model.audit.DateAudit;
+
 import java.time.Instant;
 
-public class UserProfile {
+public class UserProfile extends DateAudit {
     private Long id;
     private String username;
     private String email;
