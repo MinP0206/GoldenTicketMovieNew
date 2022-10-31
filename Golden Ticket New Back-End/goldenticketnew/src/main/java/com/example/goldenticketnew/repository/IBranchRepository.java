@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface IBranchRepository extends JpaRepository<Branch, Integer> {
+public interface IBranchRepository extends JpaRepository<Branch, Integer>{
     @Query("SELECT b FROM Branch b where b.id in " +
             "(SELECT s.branch.id FROM Schedule s JOIN s.movie m WHERE s.movie.id = :movieId )")
     List<Branch> getBranchThatShowTheMovie(@Param("movieId") Integer movieId);
