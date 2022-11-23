@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
     @CreatedDate
     private LocalDateTime createdTime;
     @ManyToOne
