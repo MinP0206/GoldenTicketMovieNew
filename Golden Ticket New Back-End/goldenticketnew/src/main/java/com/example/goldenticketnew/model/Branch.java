@@ -2,6 +2,7 @@ package com.example.goldenticketnew.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.FieldNameConstants;
 
 import javax.persistence.*;
 
@@ -9,6 +10,7 @@ import javax.persistence.*;
 @Table(name = "branch")
 @Entity
 @NoArgsConstructor
+@FieldNameConstants
 public class Branch {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,6 +18,6 @@ public class Branch {
     @Column(length = 2000)
     private String imgURL;
     private String name;
-    private String diaChi;
+    private String address;
     private String phoneNo;
 }

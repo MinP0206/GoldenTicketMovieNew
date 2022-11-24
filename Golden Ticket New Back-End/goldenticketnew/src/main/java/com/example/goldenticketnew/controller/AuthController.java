@@ -1,20 +1,21 @@
 package com.example.goldenticketnew.controller;
 
 
-import com.example.goldenticketnew.payload.ApiResponse;
-import com.example.goldenticketnew.payload.JwtAuthenticationResponse;
-import com.example.goldenticketnew.payload.LoginRequest;
-import com.example.goldenticketnew.payload.SignUpRequest;
+import com.example.goldenticketnew.model.RoleName;
+import com.example.goldenticketnew.payload.response.ApiResponse;
+import com.example.goldenticketnew.payload.response.JwtAuthenticationResponse;
+import com.example.goldenticketnew.payload.resquest.LoginRequest;
+import com.example.goldenticketnew.payload.resquest.SignUpRequest;
+import com.example.goldenticketnew.security.CurrentUser;
+import com.example.goldenticketnew.security.UserPrincipal;
 import com.example.goldenticketnew.service.auth.IAuthService;
 import com.example.goldenticketnew.service.user.IUserService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
@@ -24,27 +25,46 @@ import javax.validation.Valid;
 public class AuthController {
 
     @Autowired
-    IAuthService IAuthService;
+    IAuthService authService;
 
     @Autowired
-    IUserService IUserService;
+    IUserService userService;
 
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
 
-        return ResponseEntity.ok(new JwtAuthenticationResponse(IAuthService.authenticateUser(loginRequest)));
+        return ResponseEntity.ok(new JwtAuthenticationResponse(authService.authenticateUser(loginRequest)));
     }
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignUpRequest signUpRequest) {
-        if(IUserService.existsByUsername(signUpRequest.getUsername())) {
+        if (userService.existsByUsername(signUpRequest.getUsername())) {
             return new ResponseEntity(new ApiResponse(false, "Username is already taken!"),
-                    HttpStatus.BAD_REQUEST);
+                HttpStatus.BAD_REQUEST);
         }
-        if(IUserService.existsByEmail(signUpRequest.getEmail())) {
+        if (userService.existsByEmail(signUpRequest.getEmail())) {
             return new ResponseEntity(new ApiResponse(false, "Email Address already in use!"),
-                    HttpStatus.BAD_REQUEST);
+                HttpStatus.BAD_REQUEST);
         }
-        return ResponseEntity.created(IAuthService.registerUser(signUpRequest)).body(new ApiResponse(true, "User registered successfully"));
+        return ResponseEntity.created(authService.registerUser(signUpRequest, RoleName.ROLE_USER)).body(new ApiResponse(true, "User registered successfully"));
+    }
+    @PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/registerStaff")
+    public ResponseEntity<?> registerStaff(@Valid @RequestBody SignUpRequest signUpRequest) {
+        if (userService.existsByUsername(signUpRequest.getUsername())) {
+            return new ResponseEntity(new ApiResponse(false, "Username is already taken!"),
+                HttpStatus.BAD_REQUEST);
+        }
+        if (userService.existsByEmail(signUpRequest.getEmail())) {
+            return new ResponseEntity(new ApiResponse(false, "Email Address already in use!"),
+                HttpStatus.BAD_REQUEST);
+        }
+        return ResponseEntity.created(authService.registerUser(signUpRequest, RoleName.ROLE_STAFF)).body(new ApiResponse(true, "User registered successfully"));
+    }
+    @PutMapping("/changePassword")
+    public ResponseEntity<?> changePassword(@CurrentUser UserPrincipal currentUser , @Valid @RequestParam String newPassword, @Valid @RequestParam String oldPassword) {
+        if(authService.changePassword(currentUser,newPassword,oldPassword))
+            return new ResponseEntity(new ApiResponse(true, "Success! New password can be use right now!") , HttpStatus.OK);
+        return new ResponseEntity(new ApiResponse(false, "Fail to change password!"),  HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
