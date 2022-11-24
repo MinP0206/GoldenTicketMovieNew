@@ -44,10 +44,4 @@ workflows:
             branches:
               only:
                 - uat
-      - deploy:
-          requires:
-            - build-and-push
-          filters:
-            branches:
-              only:
-                - main
+
