@@ -61,9 +61,18 @@ public class BillService implements IBillService {
         });
 
     }
-
     @Override
     public void removeBill(BookingRequestDto bookingRequestDTO) {
+//        bookingRequestDTO.getListSeatIds().forEach(seatId->{
+//            List<Ticket> ticket = ticketRepository.findTicketsBySchedule_IdAndSeat_Id(bookingRequestDTO.getScheduleId(), seatId);
+//            // đóng gói lịch, seat và bill vào từng vé rồi add vào list vé
+////            Ticket ticket = new Ticket();
+////            ticket.setSchedule(schedule);
+////            ticket.setSeat(ISeatRepository.getById(seatId));
+////            ticket.setBill(createdBill);
+//            ticket.setQrImageURL("https://scontent-sin6-2.xx.fbcdn.net/v/t1.15752-9/268794058_655331555823095_3657556108194277679_n.png?_nc_cat=105&ccb=1-5&_nc_sid=ae9488&_nc_ohc=BrNXGO8HufkAX_OGjWc&_nc_ht=scontent-sin6-2.xx&oh=03_AVK_zaJj7pziY9nLrVqoIQJAzbomu4KPgED1PxFFpYfCrQ&oe=61F778D8");
+//            ticketRepository.save(ticket);
+//        });
 
     }
 }
