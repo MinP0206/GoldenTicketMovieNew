@@ -1,6 +1,8 @@
 package com.example.goldenticketnew.model;
 
 import com.example.goldenticketnew.enums.ArticleStatus;
+import com.example.goldenticketnew.enums.ArticleType;
+import com.example.goldenticketnew.model.audit.UserDateAudit;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldNameConstants
-public class Article {
+public class Article extends UserDateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -33,4 +35,6 @@ public class Article {
     private List<Content> contents;
     @Column(name = "status")
     private ArticleStatus status;
+    @Column(name = "type")
+    private ArticleType type;
 }

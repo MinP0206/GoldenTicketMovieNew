@@ -4,7 +4,8 @@ package com.example.goldenticketnew.model;
 import com.example.goldenticketnew.model.audit.DateAudit;
 import com.example.goldenticketnew.model.audit.UserDateAudit;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -13,7 +14,8 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
-@Data
+@Getter
+@Setter
 @Entity
 @Table(name = "user", uniqueConstraints = {
         @UniqueConstraint(columnNames = {
@@ -23,7 +25,7 @@ import java.util.Set;
             "email"
         })
 })
-public class User extends DateAudit {
+public class User extends UserDateAudit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -42,7 +44,7 @@ public class User extends DateAudit {
     @Email
     private String email;
 
-    @Size(max = 1000)
+    @Column(length = 1000)
     private String image;
 
     @JsonIgnore

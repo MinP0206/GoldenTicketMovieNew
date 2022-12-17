@@ -5,4 +5,7 @@ import com.example.goldenticketnew.dtos.BookingRequestDto;
 
 public interface IBillService {
     void createNewBill(BookingRequestDto bookingRequestDTO) throws RuntimeException;
+
+    void removeBill(BookingRequestDto bookingRequestDTO);
+
 }

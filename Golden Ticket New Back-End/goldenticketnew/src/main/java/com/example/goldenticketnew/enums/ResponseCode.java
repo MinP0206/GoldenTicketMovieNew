@@ -7,7 +7,7 @@ public enum ResponseCode {
     COMMON_ERROR(2, "Common Error"),
     INVALID_PARAM(3, "Invalid param"),
 
-    LOGIN_FAIL(4,"Login fail"),
+    LOGIN_FAIL(4,"Login failed"),
 
     //User
     USER_NOT_FOUND(101, " User not found"),
@@ -23,6 +23,9 @@ public enum ResponseCode {
     //Schedule
     ARTICLE_NOT_FOUND(401, " Article not found"),
 
+
+    //Branch
+    BRANCH_NOT_FOUND(402, " Branch not found"),
     ;
     private final int code;
     private final String message;

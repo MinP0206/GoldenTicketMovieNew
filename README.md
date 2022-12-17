@@ -38,14 +38,14 @@ npm install -g npm@8.1.2
 ```
 - ReactJS (Front-End)
 - Springboot (Back-End)
-- Database (MongoDB) 
+- Database (Mysql) 
 ```sh
-For database i use https://cloud.mongodb.com
+For database i use Mysql
 ```
 
 ## How to run the project on local (Follow the sequence)
 ### Back-End
-1. Go to .env file change the string connection to database (MongoDB)
+1. Go to .env file change the string connection to database (Mysql)
 2. Go to the folder api, then type: "yarn start"
 3. The Backend will start on localhost:5000
 
