@@ -61,7 +61,6 @@ public class BillService implements IBillService {
         });
 
     }
-
     @Override
     public void removeBill(BookingRequestDto bookingRequestDTO) {
 //        bookingRequestDTO.getListSeatIds().forEach(seatId->{
