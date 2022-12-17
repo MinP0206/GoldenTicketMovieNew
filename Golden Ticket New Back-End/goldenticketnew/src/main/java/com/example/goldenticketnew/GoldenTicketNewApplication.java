@@ -1,5 +1,13 @@
 package com.example.goldenticketnew;
 
+//import com.example.goldenticketnew.config.ConnectCadance;
+import com.example.goldenticketnew.config.cadance.CadanceWorkFlow;
+import com.uber.cadence.client.WorkflowClient;
+import com.uber.cadence.client.WorkflowClientOptions;
+import com.uber.cadence.internal.compatibility.Thrift2ProtoAdapter;
+import com.uber.cadence.internal.compatibility.proto.serviceclient.IGrpcServiceStubs;
+import com.uber.cadence.worker.Worker;
+import com.uber.cadence.worker.WorkerFactory;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,21 +18,49 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 @SpringBootApplication
 @EnableJpaAuditing
 public class GoldenTicketNewApplication {
+
+
 	@Bean
 	public ModelMapper modelMapper() {
 		return new ModelMapper();
 	}
+	static final String TASK_LIST = "HelloActivity";
 
 	public static void main(String[] args) {
 		SpringApplication.run(GoldenTicketNewApplication.class, args);
+		// Get a new client
+		// NOTE: to set a different options, you can do like this:
+		// ClientOptions.newBuilder().setRpcTimeout(5 * 1000).build();
+		WorkflowClient workflowClient =
+			WorkflowClient.newInstance(
+				new Thrift2ProtoAdapter(IGrpcServiceStubs.newInstance()),
+				WorkflowClientOptions.newBuilder().setDomain("golden-new").build());
+		// Get worker to poll the task list.
+		WorkerFactory factory = WorkerFactory.newInstance(workflowClient);
+		Worker worker = factory.newWorker(TASK_LIST);
+		// Workflows are stateful. So you need a type to create instances.
+		worker.registerWorkflowImplementationTypes(CadanceWorkFlow.BookWorkflowImpl.class);
+		// Activities are stateless and thread safe. So a shared instance is used.
+		worker.registerActivitiesImplementations(new CadanceWorkFlow.BookingActivitiesImpl());
+		// Start listening to the workflow and activity task lists.
+		factory.start();
+		boolean test = true;
+		// Get a workflow stub using the same task list the worker uses.
+		CadanceWorkFlow.BookWorkflow workflow = workflowClient.newWorkflowStub(CadanceWorkFlow.BookWorkflow.class);
+		// Execute a workflow waiting for it to complete.
+		System.out.println("Dat ve thanh cong vui long doi 20s lay ten phim");
+		String greeting
+			= workflow.getBooking("haha");
+		System.out.println(greeting);
+
+		System.exit(0);
 	}
 
-
+//
 //    @Autowired
 //    private UserRepository userRepository;
 //
-//    @Autowired
-//    private IMovieRepository movieRepository;
+
 //
 //    @Autowired
 //    private IBranchRepository branchRepository;
@@ -38,10 +74,10 @@ public class GoldenTicketNewApplication {
 //    @Autowired
 //    private ISeatRepository seatRepository;
 //
-//    // Do chưa có trang admin để thêm phim và lịch chiếu nên thêm tạm dữ liệu xuống db để demo
+////     Do chưa có trang admin để thêm phim và lịch chiếu nên thêm tạm dữ liệu xuống db để demo
 //    @PostConstruct
 //    public void init() {
-//        // Chạy 1 lần đầu app rồi bỏ comment đoạn này rồi chạy lại để add data ghế ngồi cho phòng 1
+//         Chạy 1 lần đầu app rồi bỏ comment đoạn này rồi chạy lại để add data ghế ngồi cho phòng 1
 //        Room room = roomRepository.findById(1).get();
 //
 //        for(int i=1;i<=8;i++){
@@ -88,8 +124,8 @@ public class GoldenTicketNewApplication {
 //            admin.setPassword("123456789");
 //            admin.setRoles(roles);
 //            userRepository.save(admin);
-//
-//
+
+
 //        List<Movie> movies = movieRepository.findAll();
 //        if (movies.isEmpty()) {
 //            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -427,6 +463,6 @@ public class GoldenTicketNewApplication {
 //        movie = movieRepository.save(movie);
 //        return movie;
 //    }
-//
+
 
 }

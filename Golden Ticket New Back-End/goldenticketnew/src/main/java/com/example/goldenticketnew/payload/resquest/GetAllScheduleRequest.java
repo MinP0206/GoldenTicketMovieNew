@@ -15,6 +15,8 @@ import org.springframework.data.jpa.domain.Specification;
 import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,6 +32,9 @@ public class GetAllScheduleRequest {
 
     private Integer branchId;
 
+    private String startDate;
+
+    private String startTime;
     private Integer roomId;
     public Specification<Schedule> getSpecification(){
         return (root, query, cb) -> {
@@ -45,6 +50,12 @@ public class GetAllScheduleRequest {
             if (roomId != null) {
                 Join<Room, Schedule> join = root.join("room", JoinType.INNER);
                 predicates.add(cb.equal(join.get(Room.Fields.id), roomId));
+            }
+            if(startDate!= null){
+                predicates.add(cb.equal(root.get(Schedule.Fields.startDate), LocalDate.parse(startDate)));
+            }
+            if(startTime!= null){
+                predicates.add(cb.equal(root.get(Schedule.Fields.startTime), LocalTime.parse(startTime)));
             }
             return cb.and(predicates.toArray(new Predicate[predicates.size()]));
         };

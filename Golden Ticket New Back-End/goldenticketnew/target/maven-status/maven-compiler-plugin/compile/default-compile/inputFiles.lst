@@ -1,73 +1,112 @@
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/config/AuditingConfig.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/User.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/ticket/TicketService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/BookingRequestDto.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/TicketDto.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Seat.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/UserRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Role.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/BranchDto.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/security/JwtTokenProvider.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/BillDto.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/bill/IBillService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/security/CustomUserDetailsService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/TicketRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/exception/ResourceNotFoundException.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/RoleName.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IMovieRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/RoomDto.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/user/UserService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/exception/BadRequestException.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Branch.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/BranchController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/user/IUserService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/UserProfile.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/config/SecurityConfig.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/security/JwtAuthenticationFilter.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/room/RoomService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Ticket.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/branch/IBranchService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/schedule/IScheduleService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Schedule.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/auth/AuthService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/SeatController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/UserIdentityAvailability.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/bill/BillService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/BillController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/room/IRoomService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IRoleRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/exception/AppException.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IRoomRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/movie/IMovieService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/MovieController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/seat/SeatService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/RoomController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/ScheduleController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/audit/DateAudit.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/audit/UserDateAudit.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/TicketController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Room.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IBillRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/IGeneralService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Movie.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IBranchRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/security/UserPrincipal.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/UserSummary.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/ISeatRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/UserController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/auth/IAuthService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/SeatDto.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/GoldenTicketNewApplication.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/config/WebMvcConfig.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/schedule/ScheduleService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/ticket/ITicketService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IScheduleRepository.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/security/CurrentUser.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/movie/MovieService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/seat/ISeatService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/AuthController.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/MovieDto.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/security/JwtAuthenticationEntryPoint.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Bill.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/service/branch/BranchService.java
-/home/minhphuong/Projects/TLCN/GoldenTicketMovieNew/Golden Ticket New Back-End/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/ScheduleDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IArticleRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/room/IRoomService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IScheduleRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/config/SecurityConfig.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Branch.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/branch/BranchService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/SeatDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/audit/UserDateAudit.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/BranchController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/TicketRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/response/ApiResponse.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/article/ArticleService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/ISeatRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/security/CurrentUser.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/audit/DateAudit.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/utils/ModelMapperUtils.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/article/request/GetAllArticleRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/user/IUserService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/ArticleController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/MovieDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/user/UserService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/ContentDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/RoleName.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Content.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IBillRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Schedule.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/ticket/TicketService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/exception/AppException.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/response/ResponseBase.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/response/ApiDtoResponse.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/SignUpRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Movie.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Article.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/exception/ResourceNotFoundException.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IBranchRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/auth/AuthService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/MovieController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/bill/BillService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/UserRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/enums/ResponseCode.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/GoldenTicketNewApplication.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/LoginRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/IGeneralService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/enums/ArticleType.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/ScheduleController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/security/CustomUserDetailsService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/BillDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/FieldRequestError.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/AddNewMovieRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/security/UserPrincipal.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Bill.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/exception/BadRequestException.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/schedule/IScheduleService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/security/JwtTokenProvider.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/AuthController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Ticket.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IRoleRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/GetAllScheduleRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/branch/IBranchService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/UserIdentityAvailability.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/BillController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/article/request/AddNewArticleRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/UserProfile.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/article/request/NoIdContentDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/SeatController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/response/JwtAuthenticationResponse.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/ArticleDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/UpdateMovieRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/RoomController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/room/RoomService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/ScheduleDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/response/PageResponse.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/article/IArticleService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/TicketController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IMovieRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/article/request/UpdateArticleRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/UpdateRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/config/AuditingConfig.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/BranchDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/security/JwtAuthenticationEntryPoint.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/ticket/ITicketService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Room.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/UpdateUserRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/config/SwaggerConfig.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/GetAllMovieRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/bill/IBillService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/UserDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/seat/SeatService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/config/BaseExceptionController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/TicketDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/movie/MovieService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/enums/ArticleStatus.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IContentRepository.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Role.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/User.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/article/request/ChangeArticleStatusRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/GetAllBranchRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/model/Seat.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/config/WebMvcConfig.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/controller/UserController.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/schedule/AddNewScheduleRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/exception/InternalException.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/security/JwtAuthenticationFilter.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/UserSummary.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/schedule/ScheduleService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/auth/IAuthService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/payload/resquest/ChangePasswordRequest.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/RoomDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/seat/ISeatService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/service/movie/IMovieService.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/dtos/BookingRequestDto.java
+/home/minhphuong/Projects/TLCN/Real/goldenticketnew/src/main/java/com/example/goldenticketnew/repository/IRoomRepository.java

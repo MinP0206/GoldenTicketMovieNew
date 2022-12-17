@@ -2,6 +2,7 @@ package com.example.goldenticketnew.service.bill;
 
 
 import com.example.goldenticketnew.dtos.BookingRequestDto;
+import com.example.goldenticketnew.enums.BillStatus;
 import com.example.goldenticketnew.model.Bill;
 import com.example.goldenticketnew.model.Schedule;
 import com.example.goldenticketnew.model.Ticket;
@@ -39,6 +40,7 @@ public class BillService implements IBillService {
         Bill billToCreate = new Bill();
         billToCreate.setUser(user);
         billToCreate.setCreatedTime(LocalDateTime.now());
+        billToCreate.setStatus(BillStatus.WAITING_PAYMENT);
         Bill createdBill = IBillRepository.save(billToCreate);
 
         //Với mỗi ghế ngồi check xem đã có ai đặt chưa, nếu rồi thì throw, roll back luôn còn ko
@@ -48,6 +50,21 @@ public class BillService implements IBillService {
                     .isEmpty()){// Nếu đã có người đặt vé ghế đó ở lịch cụ thể đó thì
                 throw new RuntimeException("Đã có người nhanh tay hơn đặt ghế, mời bạn chọn lại!");
             }
+            // đóng gói lịch, seat và bill vào từng vé rồi add vào list vé
+            Ticket ticket = new Ticket();
+            ticket.setSchedule(schedule);
+            ticket.setSeat(ISeatRepository.getById(seatId));
+            ticket.setBill(createdBill);
+            ticket.setQrImageURL("https://scontent-sin6-2.xx.fbcdn.net/v/t1.15752-9/268794058_655331555823095_3657556108194277679_n.png?_nc_cat=105&ccb=1-5&_nc_sid=ae9488&_nc_ohc=BrNXGO8HufkAX_OGjWc&_nc_ht=scontent-sin6-2.xx&oh=03_AVK_zaJj7pziY9nLrVqoIQJAzbomu4KPgED1PxFFpYfCrQ&oe=61F778D8");
+            ticketRepository.save(ticket);
+        });
+
+    }
+
+    @Override
+    public void removeBill(BookingRequestDto bookingRequestDTO) {
+        bookingRequestDTO.getListSeatIds().forEach(seatId->{
+            Ticket ticket = ticketRepository.findTicketsBySchedule_IdAndSeat_Id(bookingRequestDTO.getScheduleId(), seatId);
             // đóng gói lịch, seat và bill vào từng vé rồi add vào list vé
             Ticket ticket = new Ticket();
             ticket.setSchedule(schedule);
