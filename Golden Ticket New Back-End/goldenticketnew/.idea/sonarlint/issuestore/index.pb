@@ -3,14 +3,10 @@
 Osrc/main/java/com/example/goldenticketnew/service/schedule/ScheduleService.java,f/6/f681403b7220373b71353dd70ba206d295c2c5da
 m
 =src/main/java/com/example/goldenticketnew/dtos/TicketDto.java,a/5/a5ffda1cb7873d170f4895ea081ac600b065b756
-s
-Csrc/main/java/com/example/goldenticketnew/config/SwaggerConfig.java,f/1/f1f7f7288b6b7e8d99fe80330c41e5b8aef459fc
 ~
 Nsrc/test/java/com/example/goldenticketnew/GoldenTicketNewApplicationTests.java,c/d/cd41eaeb4be425ae05060c6d63f7f671b2dc2e15
 x
 Hsrc/main/java/com/example/goldenticketnew/service/auth/IAuthService.java,c/6/c6a7b87de0f245bbeaf1b6e0cacf3785d2597df2
-r
-Bsrc/test/java/com/example/goldenticketnew/MovieControllerTest.java,2/5/2521beaa3a3db9cfa53955df7b9def93fe60ff3d
 w
 Gsrc/main/java/com/example/goldenticketnew/service/auth/AuthService.java,3/1/31c3ea10a404a155436bdabc51658287636aee5d
 w
